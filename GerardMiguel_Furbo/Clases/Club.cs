@@ -40,6 +40,8 @@ namespace GerardMiguel_Furbo.Clases
             }
 
             Equipo nuevoEquipo = new Equipo(nombre);
+            equiposLista.Add(nuevoEquipo);
+            nuevoEquipo.CrearJugador(true);
         }
 
         public override string ToString() { return "Club " + this.nombre; }

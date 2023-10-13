@@ -25,5 +25,30 @@ namespace GerardMiguel_Furbo.Clases
         public void QuitarJugador(Jugador jugador) { jugadoresLista.Remove(jugador); }
 
         public override string ToString() { return "Equipo " + this.nombre; }
+        
+        public void CrearJugador(bool primeraVez)
+        {
+            if (primeraVez) Console.Write("Introduce el nombre del primer jugador del equipo: ");
+            else Console.Write("Introduce el nombre del jugador: ");
+
+            var nombre = Console.ReadLine();
+
+            if (nombre.Equals("") || nombre == null)
+            {
+                Console.WriteLine("Nombre erróneo!");
+                return;
+            }
+
+            int dorsal;
+            var resultado = int.TryParse(Console.ReadLine(), out dorsal);
+
+            if (!resultado || dorsal < 0)
+            {
+                Console.WriteLine("Dorsal errónea!");
+                return;
+            }
+
+            Jugador nuevoJugador = new Jugador(nombre, dorsal);
+        }
     }
 }
