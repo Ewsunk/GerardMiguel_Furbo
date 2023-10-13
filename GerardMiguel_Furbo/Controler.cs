@@ -23,7 +23,7 @@ namespace GerardMiguel_Furbo
         {
             int eleccion;
 
-            newClub();
+            NewClub();
 
             do
             {
