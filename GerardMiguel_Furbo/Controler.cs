@@ -35,9 +35,9 @@ namespace GerardMiguel_Furbo
                 Console.WriteLine("5- Ver equipo");
                 Console.WriteLine("6- Ver Jugadores");
 
-                eleccion = Convert.ToInt32(System.Console.ReadLine());
+                int.TryParse(Console.ReadLine(), out eleccion);
 
-                switch(eleccion)
+                switch (eleccion)
                 {
                     case 1:
                         NewClub();
@@ -45,6 +45,9 @@ namespace GerardMiguel_Furbo
 
                     case 2:
                         SelectClub();
+                        break;
+
+                    case 3:
                         break;
                 }
 
