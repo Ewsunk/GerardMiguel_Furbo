@@ -23,5 +23,7 @@ namespace GerardMiguel_Furbo.Clases
 
         public void AddJugador(Jugador jugador) { jugadoresLista.Add(jugador); }
         public void QuitarJugador(Jugador jugador) { jugadoresLista.Remove(jugador); }
+
+        public override string ToString() { return "Equipo " + this.nombre; }
     }
 }

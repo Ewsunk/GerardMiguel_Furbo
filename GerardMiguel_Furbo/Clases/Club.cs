@@ -41,5 +41,7 @@ namespace GerardMiguel_Furbo.Clases
 
             Equipo nuevoEquipo = new Equipo(nombre);
         }
+
+        public override string ToString() { return "Club " + this.nombre; }
     }
 }

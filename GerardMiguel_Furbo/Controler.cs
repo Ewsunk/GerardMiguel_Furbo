@@ -52,7 +52,7 @@ namespace GerardMiguel_Furbo
             } while (eleccion != 0);
         }
 
-        private static void NewClub()
+        private static void NewClub()           // Crear club
         {
             Console.Write("Introduce el nombre del club: ");
             var nombre = Console.ReadLine();
