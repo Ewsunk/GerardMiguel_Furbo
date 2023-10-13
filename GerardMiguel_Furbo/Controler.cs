@@ -46,10 +46,11 @@ namespace GerardMiguel_Furbo
                         break;
 
                     case 3:
-                        clubes[clubSeleccionado].CrearEquipo(true);
+                        clubes[clubSeleccionado].CrearEquipo(false);
                         break;
 
                     case 4:
+                        CrearJugador();
                         break;
 
                     case 5:
@@ -64,6 +65,18 @@ namespace GerardMiguel_Furbo
 
             } while (eleccion != 0);
         }
+
+
+        private static void CrearJugador()
+        {
+            Equipo equipo = clubes[clubSeleccionado].SeleccionarEquipo();
+
+            if (equipo == null)
+                Console.WriteLine("Nombre de equipo incorrecto!");
+            else
+                equipo.CrearJugador(false);
+        }
+
 
         private static void NewClub()           // Crear club
         {

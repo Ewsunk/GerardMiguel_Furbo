@@ -45,5 +45,24 @@ namespace GerardMiguel_Furbo.Clases
         }
 
         public override string ToString() { return "Club " + this.nombre; }
+
+
+        public Equipo SeleccionarEquipo()
+        {
+            Console.WriteLine("\n\n");
+
+            Console.WriteLine("==== Lista de Equipos ====");
+
+            foreach (Equipo equipo in equiposLista)
+                Console.WriteLine(equipo.ToString());
+
+            Console.WriteLine("\n\n");
+
+            Console.Write("Introduce el nombre del equipo: ");
+            string equipoNombre = Console.ReadLine();
+
+            Equipo equipoSeleccionado = equiposLista.Find(equipo => equipo.ToString().Equals(equipoNombre));
+            return equipoSeleccionado;
+        }
     }
 }

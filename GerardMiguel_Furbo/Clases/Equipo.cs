@@ -53,5 +53,23 @@ namespace GerardMiguel_Furbo.Clases
             Jugador nuevoJugador = new Jugador(nombre, dorsal);
             jugadoresLista.Add(nuevoJugador);
         }
+
+        public Jugador SeleccionarJugador()
+        {
+            Console.WriteLine("\n\n");
+
+            Console.WriteLine("==== Lista de Jugadores ====");
+
+            foreach (Jugador jugador in jugadoresLista)
+                Console.WriteLine(jugador.ToString());
+
+            Console.WriteLine("\n\n");
+
+            Console.Write("Introduce solo el nombre del jugador: ");
+            string jugadorNombre = Console.ReadLine();
+
+            Jugador jugadorSeleccionado = jugadoresLista.Find(jugador => jugador.Nombre.Equals(jugadorNombre));
+            return jugadorSeleccionado;
+        }
     }
 }

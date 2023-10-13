@@ -29,7 +29,7 @@ namespace GerardMiguel_Furbo.Clases
 
         public override string ToString()
         {
-            return "Jugador: " + this.nombre + " dorsal: ";
+            return "Jugador: " + this.nombre + " dorsal: " + this.dorsal;
         }
     }
 }
