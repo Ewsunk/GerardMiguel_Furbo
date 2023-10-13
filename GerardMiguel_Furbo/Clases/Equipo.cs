@@ -40,6 +40,8 @@ namespace GerardMiguel_Furbo.Clases
             }
 
             int dorsal;
+
+            Console.Write("Introduce la dorsal del jugador: ");
             var resultado = int.TryParse(Console.ReadLine(), out dorsal);
 
             if (!resultado || dorsal < 0)
@@ -49,6 +51,7 @@ namespace GerardMiguel_Furbo.Clases
             }
 
             Jugador nuevoJugador = new Jugador(nombre, dorsal);
+            jugadoresLista.Add(nuevoJugador);
         }
     }
 }
