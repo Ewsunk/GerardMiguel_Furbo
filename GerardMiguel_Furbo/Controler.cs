@@ -31,8 +31,7 @@ namespace GerardMiguel_Furbo
                 Console.WriteLine("2- Seleccionar club");
                 Console.WriteLine("3- Crear equipo");
                 Console.WriteLine("4- Crear jugador");
-                Console.WriteLine("5- Ver equipo");
-                Console.WriteLine("6- Ver Jugadores");
+                Console.WriteLine("5- Ver todo");
 
                 int.TryParse(Console.ReadLine(), out eleccion);
 
@@ -47,6 +46,18 @@ namespace GerardMiguel_Furbo
                         break;
 
                     case 3:
+                        clubes[clubSeleccionado].CrearEquipo(true);
+                        break;
+
+                    case 4:
+                        break;
+
+                    case 5:
+                        ListAll();
+                        break;
+
+                    default: 
+                        Console.WriteLine("Opcion no valida");
                         break;
                 }
 
@@ -83,5 +94,22 @@ namespace GerardMiguel_Furbo
             clubSeleccionado = Convert.ToInt32(System.Console.ReadLine());
         }
 
+        private static void ListAll()
+        {
+            foreach (Club club in clubes)
+            {
+                Console.WriteLine("- " + club.ToString());
+
+                foreach (Equipo equipo in club.EquiposLista)
+                {
+                    Console.WriteLine("-- " + equipo.ToString());
+
+                    foreach (Jugador jugador in equipo.JugadoresLista)
+                    {
+                        Console.WriteLine("--- " +  jugador.ToString());
+                    }
+                }
+            }
+        }
     }
 }
