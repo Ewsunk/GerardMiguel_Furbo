@@ -46,6 +46,7 @@
     <Compile Include="Clases\Club.cs" />
     <Compile Include="Clases\Equipo.cs" />
     <Compile Include="Clases\Jugador.cs" />
+    <Compile Include="Clases\Partido.cs" />
     <Compile Include="Controler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
