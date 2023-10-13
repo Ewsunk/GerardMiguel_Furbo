@@ -31,8 +31,11 @@ namespace GerardMiguel_Furbo
                 Console.WriteLine("2- Seleccionar club");
                 Console.WriteLine("3- Crear equipo");
                 Console.WriteLine("4- Crear jugador");
-                Console.WriteLine("5- Ver todo");
+                Console.WriteLine("5- Ver lista de clubs, equipos y jugadores");
+                Console.WriteLine("6- Organizar partido");
+                Console.WriteLine("7- Ver resultados de partidos");
 
+                Console.Write("Seleccion: ");
                 int.TryParse(Console.ReadLine(), out eleccion);
 
                 switch (eleccion)
@@ -57,12 +60,16 @@ namespace GerardMiguel_Furbo
                         ListAll();
                         break;
 
+                    case 6:
+                        JugarPartido();
+                        break;
+
                     default: 
                         Console.WriteLine("Opcion no valida");
                         break;
                 }
 
-
+                Console.WriteLine();
             } while (eleccion != 0);
         }
 
@@ -124,5 +131,35 @@ namespace GerardMiguel_Furbo
                 }
             }
         }
+
+        private static void JugarPartido()
+        {
+            Equipo equipo1 = null, equipo2 = null;
+
+            for (int i = 0; i < 2; i++)
+            {
+                Console.WriteLine("Club actual: " + clubes[clubSeleccionado].Nombre +
+                "\nCambiar de club?" +
+                "\n0- No" +
+                "\n1- Si");
+
+                if (Convert.ToInt32(Console.ReadLine()) == 1)
+                    SelectClub();
+
+                if (i == 0)
+                    equipo1 = clubes[clubSeleccionado].SeleccionarEquipo();
+                else
+                    equipo2 = clubes[clubSeleccionado].SeleccionarEquipo();
+            }
+
+            Partido partido = new Partido(equipo1, equipo2);
+
+            Equipo equipoGanador = partido.JugarPartido();
+
+            Console.WriteLine("Ha ganado: " + equipoGanador.ToString());
+            
+        }
+
+
     }
 }
