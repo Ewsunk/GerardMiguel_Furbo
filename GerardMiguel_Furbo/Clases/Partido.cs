@@ -18,6 +18,8 @@ namespace GerardMiguel_Furbo.Clases
             this.equipoB = equipoB;
         }
 
+        public Equipo EquipoGanador { get { return equipoGanador; } set { equipoGanador = value; } }
+
 
         public Equipo JugarPartido()
         {
@@ -40,6 +42,12 @@ namespace GerardMiguel_Furbo.Clases
             }
 
             return equipoGanador;
+        }
+
+
+        public override string ToString()
+        {
+            return equipoA.ToString() + " | " + equipoB.ToString() + " | Ganador: " + equipoGanador;
         }
 
     }

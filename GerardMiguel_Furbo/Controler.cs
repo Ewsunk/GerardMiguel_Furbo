@@ -11,6 +11,7 @@ namespace GerardMiguel_Furbo
     {
         private static List<Club> clubes;
         private static int clubSeleccionado;
+        private static List<Partido> partidosLista;
 
         public static void Start()
         {
@@ -20,6 +21,8 @@ namespace GerardMiguel_Furbo
             NewClub();
             Menu();
         }
+
+        public List<Partido> PartidosLista { get { return partidosLista; } set { partidosLista = value; } }
 
         private static void Menu()
         {
@@ -64,6 +67,10 @@ namespace GerardMiguel_Furbo
                         JugarPartido();
                         break;
 
+                    case 7:
+                        MostrarVictorias();
+                        break;
+
                     default: 
                         Console.WriteLine("Opcion no valida");
                         break;
@@ -73,6 +80,12 @@ namespace GerardMiguel_Furbo
             } while (eleccion != 0);
         }
 
+
+        private static void MostrarVictorias()
+        {
+            foreach (Partido partido in partidosLista)
+                partido.ToString();
+        }
 
         private static void CrearJugador()
         {
@@ -157,7 +170,11 @@ namespace GerardMiguel_Furbo
             Equipo equipoGanador = partido.JugarPartido();
 
             Console.WriteLine("Ha ganado: " + equipoGanador.ToString());
-            
+        }
+
+        public Partido EncontrarPartidoGanado(Equipo equipo)
+        {
+            return partidosLista.Find(partido => partido.EquipoGanador == equipo);
         }
 
 
