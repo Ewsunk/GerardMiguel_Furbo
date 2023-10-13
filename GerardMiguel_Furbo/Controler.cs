@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GerardMiguel_Furbo.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,12 @@ namespace GerardMiguel_Furbo
 {
     internal class Controler
     {
-        private static List<String> clubes;     // Cambiar a objeto club
+        private static List<Club> clubes;
         private static int clubSeleccionado;
 
         public static void Start()
         {
-            clubes = new List<String>();        // Cambiar a objeto club
+            clubes = new List<Club>();
             clubSeleccionado = 0;
 
             Menu();
@@ -23,11 +24,10 @@ namespace GerardMiguel_Furbo
         {
             int eleccion;
 
-            newClub();
+            NewClub();
 
             do
             {
-
                 Console.WriteLine("1- Crear club");
                 Console.WriteLine("2- Seleccionar club");
                 Console.WriteLine("3- Crear equipo");
@@ -57,12 +57,17 @@ namespace GerardMiguel_Furbo
 
         }
 
-        private static void SelectClub()
+        private static void SelectClub()        // Selecciona el club que quieras de la lista
         {
-            foreach (var club in clubes)
-            {
+            int i = 0;
 
+            foreach (Club club in clubes)
+            {
+                Console.WriteLine(i + " - " + club.Nombre);
+                i++;
             }
+
+            clubSeleccionado = Convert.ToInt32(System.Console.ReadLine());
         }
 
     }
