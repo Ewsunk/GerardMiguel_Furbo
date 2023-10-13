@@ -25,5 +25,21 @@ namespace GerardMiguel_Furbo.Clases
 
         public void AddEquipo(Equipo equipo) { equiposLista.Add(equipo); }
         public void QuitarEquipo(Equipo equipo) { equiposLista.Remove(equipo); }
+
+        public void CrearEquipo(bool primeraVez)
+        {
+            if (primeraVez) Console.Write("Introduce el nombre del primer equipo del club: ");
+            else Console.Write("Introduce el nombre del equipo: ");
+
+            var nombre = Console.ReadLine();
+
+            if (nombre.Equals("") || nombre == null)
+            {
+                Console.WriteLine("Nombre erróneo!");
+                return;
+            }
+
+            Equipo nuevoEquipo = new Equipo(nombre);
+        }
     }
 }

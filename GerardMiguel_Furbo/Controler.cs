@@ -54,7 +54,18 @@ namespace GerardMiguel_Furbo
 
         private static void NewClub()
         {
+            Console.Write("Introduce el nombre del club: ");
+            var nombre = Console.ReadLine();
 
+            if (nombre.Equals("") || nombre == null)
+            {
+                Console.WriteLine("Nombre erróneo!");
+                return;
+            }
+
+            Club nuevoClub = new Club(nombre);
+            clubes.Add(nuevoClub);
+            nuevoClub.CrearEquipo(true);
         }
 
         private static void SelectClub()        // Selecciona el club que quieras de la lista
