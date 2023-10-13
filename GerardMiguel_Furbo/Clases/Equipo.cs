@@ -6,30 +6,27 @@ using System.Threading.Tasks;
 
 namespace GerardMiguel_Furbo.Clases
 {
-    
-
-    public class Jugador
+    public class Equipo
     {
         private string nombre;
-        private int dorsal;
+        private List<Jugador> jugadoresLista;
 
-
-        public Jugador() { }
-
-        public Jugador(string nombre, int dorsal)
+        public Equipo(string nombre) 
         {
             this.nombre = nombre;
-            this.dorsal = dorsal;
+            jugadoresLista = new List<Jugador>();
         }
 
-
         public string Nombre { get { return nombre; } set { nombre = value; } }
-        public int Dorsal { get {  return dorsal; } set { dorsal = value; } }
 
-
-        public override string ToString()
+        public void AddJugador(Jugador jugador)
         {
-            return "Jugador: " + this.nombre + " dorsal: ";
+
+        }
+
+        public void QuitarJugador(Jugador jugador)
+        {
+
         }
     }
 }
