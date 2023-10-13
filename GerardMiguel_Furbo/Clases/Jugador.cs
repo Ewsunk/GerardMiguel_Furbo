@@ -13,10 +13,23 @@ namespace GerardMiguel_Furbo.Clases
         private string nombre;
         private int dorsal;
 
-        Jugador()
-        {
 
+        public Jugador() { }
+
+        public Jugador(string nombre, int dorsal)
+        {
+            this.nombre = nombre;
+            this.dorsal = dorsal;
         }
 
+
+        public string Nombre { get { return nombre; } set { nombre = value; } }
+        public int Dorsal { get {  return dorsal; } set { dorsal = value; } }
+
+
+        public override string ToString()
+        {
+            return "Jugador: " + this.nombre + " dorsal: ";
+        }
     }
 }
