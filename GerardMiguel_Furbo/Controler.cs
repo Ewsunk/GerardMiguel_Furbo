@@ -17,14 +17,13 @@ namespace GerardMiguel_Furbo
             clubes = new List<Club>();
             clubSeleccionado = 0;
 
+            NewClub();
             Menu();
         }
 
         private static void Menu()
         {
             int eleccion;
-
-            NewClub();
 
             do
             {
